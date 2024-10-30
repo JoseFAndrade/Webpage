@@ -8,6 +8,38 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles-5INURTSO.css"></head>
 <body>
+  <body>
+
+<div>
+  <h1> Persona Project </h1>
+</div>
+<div>
+  <h2 class = "center"> Search bar for units</h2>
+  <input id="page-search-input" type = "text" placeholder="Search..." (keyup.backspace)="delete()" (keyup)="populateTable()" >
+  <h3> Results</h3>
+  <table class = "ptable">
+
+    <tr>
+      <th>Persona</th>
+      <th>Arcana</th>
+      <th>Level</th>
+    </tr>
+    @for (persona of personaArray; track $index){
+      <tr>
+        <td> <a [routerLink]="['/persona', persona[0]]"> {{persona[0]}}</a></td>
+        <td> {{persona[1].arcana}} </td>
+        <td> {{persona[1].level}}</td>
+      </tr>
+    }
+
+  </table>
+</div>
+
+
+</body>
+
+<router-outlet></router-outlet>
+
   <app-root></app-root>
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-4UJDKDR2.js" defer></script><script src="main-DRLLD73M.js" type="module"></script></body>
 </html>
